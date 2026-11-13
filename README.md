@@ -81,8 +81,12 @@ sudo apt-get install -f
 ```
 После установки запустите **Gob-Inc-shell** из меню приложений или командой `gob-inc-shell`.
 
-### Вариант 2: Сборка из исходников
+### Вариант 2: Сборка и запуск на Arch Linux (`pacman`) или Debian/Ubuntu (`apt`)
 ```bash
+# На Arch Linux:
+sudo pacman -S base-devel glfw mesa
+
+# На Ubuntu / Debian:
 sudo apt install build-essential libglfw3-dev libgl1-mesa-dev
 git clone https://github.com/Goblin-Inc/Gob-Inc-shell.git
 cd Gob-Inc-shell
