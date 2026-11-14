@@ -279,6 +279,7 @@ int main(int argc, char** argv)
         0x2580, 0x259F, // Block Elements
         0x25A0, 0x25FF, // Geometric Shapes
         0x2700, 0x27BF, // Dingbats
+        0xE000, 0xF8FF, // Private Use Area (Nerd Fonts / Powerline)
         0,
     };
     builder.AddRanges(extra_ranges);
@@ -286,10 +287,18 @@ int main(int argc, char** argv)
     builder.BuildRanges(&glyph_ranges);
 
     const char* font_paths[] = {
+        "/usr/share/fonts/TTF/JetBrainsMonoNerdFont-Regular.ttf",
+        "/usr/share/fonts/TTF/JetBrainsMonoNerdFontMono-Regular.ttf",
+        "/usr/share/fonts/TTF/JetBrainsMono-Regular.ttf",
+        "/usr/share/fonts/jetbrains-mono/JetBrainsMono-Regular.ttf",
         "/usr/share/fonts/truetype/jetbrains-mono/JetBrainsMono-Regular.ttf",
+        "/usr/share/fonts/TTF/DejaVuSansMono.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf",
+        "/usr/share/fonts/liberation/LiberationMono-Regular.ttf",
         "/usr/share/fonts/truetype/liberation/LiberationMono-Regular.ttf",
-        "/usr/share/fonts/truetype/noto/NotoSansMono-Regular.ttf"
+        "/usr/share/fonts/noto/NotoSansMono-Regular.ttf",
+        "/usr/share/fonts/truetype/noto/NotoSansMono-Regular.ttf",
+        "/usr/share/fonts/Adwaita/AdwaitaMono-Regular.ttf"
     };
 
     ImFont* mono_font = nullptr;
