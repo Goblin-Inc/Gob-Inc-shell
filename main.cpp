@@ -233,6 +233,11 @@ static void forward_keyboard_to_terminal(GLFWwindow* window, Terminal& term)
     }
 }
 
+static void glfw_error_callback(int error, const char* description)
+{
+    std::fprintf(stderr, "GLFW Error %d: %s\n", error, description ? description : "(null)");
+}
+
 int main(int argc, char** argv)
 {
     const char* screenshot_out = nullptr;
@@ -249,6 +254,7 @@ int main(int argc, char** argv)
         }
     }
 
+    glfwSetErrorCallback(glfw_error_callback);
     if (!glfwInit()) return 1;
 
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
